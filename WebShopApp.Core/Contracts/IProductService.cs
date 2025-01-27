@@ -16,5 +16,6 @@ namespace WebShopApp.Core.Contracts
         Product GetPRoductById(int productId);
         bool RemoveById(int dogproductId);
         List<Product> GetProducts(string searchStringCategoryName, string searchStringBrandName);
+        object GetProducts(int productId);
     }
 }

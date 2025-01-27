@@ -67,6 +67,11 @@ namespace WebShopApp.Core.Services
             return products;
         }
 
+        public object GetProducts(int productId)
+        {
+            throw new NotImplementedException();
+        }
+
         public bool RemoveById(int productId)
         {
             var product = GetPRoductById(productId);
