@@ -8,8 +8,6 @@
     <div class="col-md-4">
         <form asp-action="Create">
 
-            6
-
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <input type="hidden" asp-for="ProductId" class="form-control"
@@ -59,11 +57,11 @@ warning">Back to Products</a>
 </div>
 <script>
     function calcSum() {
-    let q = document.getElementsByName('Quantity')[0].value;
-    let p = document.getElementsByName('Price')[0].value;
-    let d = document.getElementsByName('Discount')[0].value;
-    let sum = Number(q) * (Number(p) - Number(p) * Number(d) / 100);
-    document.getElementsByName('TotalPrice')[0].value = sum.toFixed(2)
+        let q = document.getElementsByName('Quantity')[0].value;
+        let p = document.getElementsByName('Price')[0].value;
+        let d = document.getElementsByName('Discount')[0].value;
+        let sum = Number(q) * (Number(p) - Number(p) * Number(d) / 100);
+        document.getElementsByName('TotalPrice')[0].value = sum.toFixed(2)
     }
     document.getElementById('Quantity').max = @Model.QuantityInStock;
     document.getElementById('Quantity').min = 1;

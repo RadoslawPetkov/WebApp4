@@ -57,7 +57,9 @@ namespace WebShopApp.Core.Services
 
         public List<Order> GetOrdersByUser(string userId)
         {
-            throw new NotImplementedException();
+            return _context.Orders.Where(x => x.UserId == userId)
+                .OrderByDescending(x=>x.UserId==userId)
+                .ToList();
         }
 
         public bool RemoveById(int orderId)

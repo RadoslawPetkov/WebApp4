@@ -10,6 +10,7 @@ using WebShopApp.Models.Order;
 
 namespace WebShopApp.Controllers
 {
+    [Authorize]
     public class OrderController : Controller
     {
         private readonly IProductService _productService;
@@ -57,6 +58,11 @@ namespace WebShopApp.Controllers
             return this.RedirectToAction("Index", "Product");
         }
 
+        public ActionResult Denied()
+        {
+            return View();
+        }
+
 
         [Authorize(Roles = "Administrator")]
         public ActionResult Index()
@@ -100,5 +106,6 @@ namespace WebShopApp.Controllers
             }).ToList();
             return View(orders);
         }
+       
     }
 }
